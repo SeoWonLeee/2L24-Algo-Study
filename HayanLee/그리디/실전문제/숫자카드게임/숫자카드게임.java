@@ -1,4 +1,4 @@
-package HayanLee.그리디;
+package HayanLee.그리디.실전문제.숫자카드게임;
 
 import java.util.*;
 public class 숫자카드게임 {

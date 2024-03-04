@@ -1,4 +1,4 @@
-package HayanLee.그리디;
+package HayanLee.그리디.실전문제.큰수의법칙;
 
 import java.util.*;
 
@@ -20,7 +20,7 @@ public class 큰수의법칙 {
 
         Arrays.sort(arr);
 
-        /*첫번째 풀이
+        /*첫번째 풀이.md
         int count = 0; //연속으로 더하고 있는 횟수 카운트
         int sum = 0; //총합
 
@@ -45,7 +45,7 @@ public class 큰수의법칙 {
         System.out.println(sum);
         */
 
-        //두번째 풀이(답안)
+        //두번째 풀이.md(답안)
         //반복되는 수열에 대한 파악 -> 반복되는 수열의 길이를 파악하기
         //ex) {6,6,6,5} -> 6,6,6,5가 반복됨 -> 수열의 길이는? 4 -> 이걸 일반화하면 K+1
 
