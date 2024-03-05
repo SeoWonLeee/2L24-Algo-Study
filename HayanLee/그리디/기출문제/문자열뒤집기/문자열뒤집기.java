@@ -3,7 +3,6 @@ package HayanLee.그리디.기출문제.문자열뒤집기;
 //2시 32분 시작 ~ 2시 58분
 import java.util.*;
 
-
 public class 문자열뒤집기 {
 
     public static int zero = 0; //전부 0으로 바꾸는 그룹(넣을때마다 뒤집는 횟수가 됨.)
