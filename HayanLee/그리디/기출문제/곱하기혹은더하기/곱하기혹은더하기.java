@@ -1,6 +1,5 @@
 package HayanLee.그리디.기출문제.곱하기혹은더하기;
 
-//주석 추가
 //오후 1시 8분 시작 ~ 1시 35분
 import java.util.*;
 
@@ -16,8 +15,7 @@ public class 곱하기혹은더하기 {
             int num = str.charAt(i) - '0'; //연산을 할 수
             if(num <= 1 || result <= 1){ // 두 수 중 하나라도 1 이하인 경우에는 더하기 연산!
                 result += num;
-            }
-            if(num > 1 && result > 1){
+            }else{
                 result *= num;
             }
         }
