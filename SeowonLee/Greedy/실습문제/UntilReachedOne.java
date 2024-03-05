@@ -7,9 +7,7 @@ public class UntilReachedOne {
         Scanner scanner = new Scanner(System.in);
 
         // N과 K 입력
-        System.out.print("N : ");
         int N = scanner.nextInt();
-        System.out.print("K : ");
         int K = scanner.nextInt();
 
         int count = 0;
@@ -18,14 +16,14 @@ public class UntilReachedOne {
         while (N != 1) {
             if (N % K == 0) {
                 N /= K;
-                count++;
             } else {
                 N -= 1;
-                count++;
             }
+
+            count++;
         }
 
         // 결과 출력
-        System.out.println("결과 : " + count);
+        System.out.println(count);
     }
 }
