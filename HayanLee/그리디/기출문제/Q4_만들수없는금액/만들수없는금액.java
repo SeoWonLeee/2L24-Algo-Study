@@ -1,6 +1,7 @@
-package HayanLee.그리디.기출문제.만들수없는금액;
+package HayanLee.그리디.기출문제.Q4_만들수없는금액;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 //오후 3시 20분 시작 ~ 4시 25분 종료
 public class 만들수없는금액 {
     public static void main(String[] args){
