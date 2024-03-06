@@ -23,7 +23,7 @@ class Solution {
             queue.add(new Food(i+1, food_times[i]));
         }
 
-
+        sum = 0; //초기화
         int lastEnd = 0; //직전에 다 먹은 음식 시간
         int after = food_times.length; //남은 음식 개수
 
