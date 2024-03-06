@@ -1,4 +1,4 @@
-package HayanLee.그리디.기출문제.문자열뒤집기;
+package HayanLee.그리디.기출문제.Q3_문자열뒤집기;
 
 //2시 32분 시작 ~ 2시 58분
 import java.util.*;

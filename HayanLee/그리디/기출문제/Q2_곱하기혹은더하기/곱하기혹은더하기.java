@@ -1,4 +1,4 @@
-package HayanLee.그리디.기출문제.곱하기혹은더하기;
+package HayanLee.그리디.기출문제.Q2_곱하기혹은더하기;
 
 //오후 1시 8분 시작 ~ 1시 35분
 import java.util.*;

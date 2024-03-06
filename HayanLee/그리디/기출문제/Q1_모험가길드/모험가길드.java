@@ -1,4 +1,4 @@
-package HayanLee.그리디.기출문제.모험가길드;
+package HayanLee.그리디.기출문제.Q1_모험가길드;
 
 import java.util.*;
 public class 모험가길드 {
