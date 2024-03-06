@@ -5,7 +5,7 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] food_times, long k) {
-        int sum = 0;
+        long sum = 0;
 
         // 전체 음식을 먹는 시간보다 k가 크거나 같다면 -1
         for(int i=0; i<food_times.length; i++){
@@ -24,8 +24,8 @@ class Solution {
         }
 
         sum = 0; //초기화
-        int lastEnd = 0; //직전에 다 먹은 음식 시간
-        int after = food_times.length; //남은 음식 개수
+        long lastEnd = 0; //직전에 다 먹은 음식 시간
+        long after = food_times.length; //남은 음식 개수
 
         //sum + (현재 음식 시간 - 이전 음식 시간) * 현재 음식 개수와 k 비교
         while(sum + ((queue.peek().getTime() - lastEnd) * after) <= k){
