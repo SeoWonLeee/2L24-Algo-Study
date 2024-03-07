@@ -1,4 +1,4 @@
-package HayanLee.구현.예제;
+package HayanLee.구현.예제.상하좌우;
 
 import java.util.*;
 public class 상하좌우 {
