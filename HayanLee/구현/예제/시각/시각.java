@@ -1,4 +1,4 @@
-package HayanLee.구현.예제;
+package HayanLee.구현.예제.시각;
 
 import java.util.*;
 public class 시각 {
