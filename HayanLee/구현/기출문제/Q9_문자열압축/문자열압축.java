@@ -1,7 +1,5 @@
 package HayanLee.구현.기출문제.Q9_문자열압축;
-
-
-class 문자열압축 {
+class Solution {
     public int solution(String s) {
         /*
         - s 입력받기
@@ -40,6 +38,12 @@ class 문자열압축 {
                 count = 1;
             }
         }
+
+        if (count > 1) {
+            compressDone.append(count);
+        }
+        compressDone.append(now);
+
         return compressDone.length();
     }
 }
