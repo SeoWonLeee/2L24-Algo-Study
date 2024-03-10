@@ -12,7 +12,7 @@
 | [이하얀](https://github.com/hayannn) | [이서원](https://github.com/SeoWonLeee) |
 |:------------------------------------------------------:|:------------------------------------------------------:|
 | dlgkdis801@naver.com | scw.dltjdnjs@gmail.com |
-|![KakaoTalk_Photo_2024-02-29-16-33-51](https://github.com/hayannn/2L24-Algo-Study/assets/102213509/945783c7-6e0f-4e2a-81eb-d9737a6db6a7)  | ![image](https://github.com/SeoWonLeee/2L24-Algo-Study/assets/148112372/7a9e011a-b489-4500-beea-d299f5ad2af7) |
+|![KakaoTalk_Photo_2024-02-29-16-33-51](https://github.com/hayannn/2L24-Algo-Study/assets/102213509/945783c7-6e0f-4e2a-81eb-d9737a6db6a7)  | <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/SeoWonLeee/2L24-Algo-Study/assets/148112372/7a9e011a-b489-4500-beea-d299f5ad2af7"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>|
 
 <br>
 <br>
