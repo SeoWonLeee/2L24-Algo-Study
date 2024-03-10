@@ -48,8 +48,8 @@ class Solution {
         }
 
         // 중앙 부분이 모두 1인지 확인
-        for (int i = N - 1; i < N * 2; i++) {
-            for (int j = N - 1; j < N * 2; j++) {
+        for (int i = N; i < N * 2; i++) {
+            for (int j = N; j < N * 2; j++) {
                 if (lockT[i][j] != 1) {
                     // 원래 상태로 되돌리기
                     for (int k = 0; k < M; k++) {
