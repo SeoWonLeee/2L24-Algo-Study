@@ -1,4 +1,4 @@
-package HayanLee.구현.기출문제.Q1_럭키스트레이트;
+package HayanLee.구현.기출문제.Q7_럭키스트레이트;
 
 // 새벽 2시 2분 시작 ~ 2시 19분
 
