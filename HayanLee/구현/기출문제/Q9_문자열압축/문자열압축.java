@@ -1,5 +1,6 @@
 package HayanLee.구현.기출문제.Q9_문자열압축;
 
+
 class 문자열압축 {
     public int solution(String s) {
         /*
