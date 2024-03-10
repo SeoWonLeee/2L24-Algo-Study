@@ -8,14 +8,16 @@ public class 럭키스트레이트 {
         Scanner sc = new Scanner(System.in);
 
         //1. N 입력받기
-        int N = sc.nextInt();
+        String input = sc.nextLine().trim();
+        int N = input.length();
         int[] arr = new int[N];
-        for(int i=0; i<N; i++){
-            arr[i] = sc.nextInt();
+
+        for (int i = 0; i < N; i++) {
+            arr[i] = input.charAt(i) - '0';
         }
 
         //2. N을 절반으로 자르기
-        int mid = arr.length / 2;
+        int mid = N / 2;
         int[] first = Arrays.copyOfRange(arr, 0, mid);
         int[] end = Arrays.copyOfRange(arr, mid, arr.length);
 
