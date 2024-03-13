@@ -25,7 +25,7 @@
   
   일반적으로 인접한 노드 중에서 방문하지 않은 노드가 여러 개 있으면 번호가 낮은 순서부터 처리
     
-  <img width="1080" alt="DFS 탐색 예시" src="https://github.com/SeoWonLeee/2L24-Algo-Study/assets/148112372/eb29ea5f-e10e-4d67-b6e6-15872daf686a">
+  <img width="755" alt="DFS 탐색 예시" src="https://github.com/SeoWonLeee/2L24-Algo-Study/assets/148112372/fc88d967-83e4-4327-90e0-2bc61ac2964c">
     
   - 결과적으로 노드의 탐색 순서 (스택에 들어간 순서) : 1 → 2 → 7 → 6 → 8 → 3 → 4 → 5
   <br/>
