@@ -4,18 +4,21 @@ package HayanLee.DFS_BFS.실전문제.미로탈출;
 
 /*
 [알고리즘]
-0. 전역변수 선언하기(N, M, arr, dx, dy, visited, queue)
+0. 전역변수 선언하기(N, M, arr, dx, dy, queue)
 1. N과 M 입력받기
 2. 버퍼 비우기
 3. 문자열 입력받기(String)
 4. BFS 계산하기(queue로 구현)
-  - 상,하,좌,우 방문
+  - 큐 초기화 : Queur LinkendList
+  - 큐가 비어있을 때까지 bfs 반복(하나의 좌표 당 상,하,좌,우 네방향 이동하며 확인)
   - 종료 조건 : 공간 밖, 벽
+  - 정상 삽입 : 현재 위치에서 1 더한 값을 해당 위치에 저장하기
+  - return : n-1, m-1까지 모두 순회 후 저장된 값
  */
 import java.util.*;
 public class 미로탈출 {
 
-    //0. 전역변수 선언하기(N, M, arr, dx, dy, visited, queue)
+    //0. 전역변수 선언하기(N, M, arr, dx, dy, queue)
     static int N;
     static int M;
     static int[][] arr;
@@ -23,8 +26,6 @@ public class 미로탈출 {
     //상하좌우
     static int[] dx = {-1, 1, 0, 0};
     static int[] dy = {0, 0, -1, 1};
-
-    static boolean[] visited = new boolean[N];
 
     static ArrayList<Integer> map = new ArrayList<>();
 
@@ -43,53 +44,46 @@ public class 미로탈출 {
         for(int i=0; i<N; i++){
             String map = sc.nextLine();
             for(int j=0; j<M; j++){
-                arr[i][j] = map.charAt(0);
+                arr[i][j] = map.charAt(j) - '0';
             }
         }
 
         // 4. BFS 계산하기 및 결과 출력
-        int result = 0;
-        for(int i=0; i<N; i++){
-            for(int j=0; j<M; j++){
-                if(bfs(i,j)) {
-                    result++;
-                }
-            }
-        }
-        System.out.println(result);
+        System.out.println(bfs(0,0));
 
     }
 
     /*4. BFS 계산하기(dequeue로 구현)
   - 상,하,좌,우 방문
   - 종료 조건 : 공간 밖, 벽*/
-    public static boolean bfs(int x, int y){
-        Queue<String> queue = new LinkedList<>();
-        queue.offer(new String(x,y));
+    public static int bfs(int x, int y){
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{x,y});
 
         while(!queue.isEmpty()){
-            for(int i=0; i<N; i++){
-                for(int j=0; j<M; j++){
-                    int nx = x + dx[i];
-                    int ny = y + dx[j];
+            int[] current = queue.poll();
+            x = current[0];
+            y = current[1];
+            for(int i=0; i<4; i++){
+                int nx = x + dx[i];
+                int ny = y + dy[i];
 
-                    //공간 밖
-                    if(nx < 0 || ny < 0 || nx >= N || ny >= M){
-                        continue;
-                    }
-                    //벽
-                    if(map[nx][ny] == 0){
-                        continue;
-                    }
+                //공간 밖
+                if(nx < 0 || ny < 0 || nx >= N || ny >= M){
+                    continue;
+                }
+                //벽
+                if(arr[nx][ny] == 0){
+                    continue;
+                }
 
-                    //정상 삽입
-                    if(map[nx][ny] == 1){
-                        map[nx][ny] = map[x][y] + 1;
-                        queue.offer(new String(nx, ny));
-                    }
+                //정상 삽입
+                if(arr[nx][ny] == 1){
+                    arr[nx][ny] = arr[x][y] + 1;
+                    queue.offer(new int[]{nx, ny});
                 }
             }
         }
-        return map[N-1][M-1];
+        return arr[N-1][M-1];
     }
 }
