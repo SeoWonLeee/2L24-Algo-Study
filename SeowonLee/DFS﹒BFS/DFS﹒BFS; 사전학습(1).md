@@ -62,25 +62,25 @@
 - 재귀 함수의 종료 조건
     - 함수의 무한 호출을 대비하기 위해 종료 조건 꼭 명시
     - 재귀 함수 종료 예제
+ 
+      ```java
+      public class Main {
+          public static final int MAX_DEPTH = 10; // 최대 재귀 호출 횟수
     
-    ```java
-    public class Main {
-        public static final int MAX_DEPTH = 10; // 최대 재귀 호출 횟수
+          public static void recursiveFunction(int depth) {
+              System.out.println("재귀 함수를 호출합니다. (호출 횟수: " + depth + ")");
+              if (depth < MAX_DEPTH) {
+                  recursiveFunction(depth + 1); // 깊이를 증가시키며 재귀 호출
+              } else {
+                  System.out.println("최대 재귀 호출 횟수에 도달하여 종료합니다.");
+              }
+          }
     
-        public static void recursiveFunction(int depth) {
-            System.out.println("재귀 함수를 호출합니다. (호출 횟수: " + depth + ")");
-            if (depth < MAX_DEPTH) {
-                recursiveFunction(depth + 1); // 깊이를 증가시키며 재귀 호출
-            } else {
-                System.out.println("최대 재귀 호출 횟수에 도달하여 종료합니다.");
-            }
-        }
-    
-        public static void main(String[] args) {
-            recursiveFunction(1); // 초기 호출 깊이는 1로 시작
-        }
-    }
-    ```
+          public static void main(String[] args) {
+              recursiveFunction(1); // 초기 호출 깊이는 1로 시작
+          }
+      }
+      ```
     
 - 재귀 함수는 내부적으로 스택 자료구조와 동일
     - 컴퓨터 내부에서 재귀 함수의 수행은 스택 자료구조를 이용
