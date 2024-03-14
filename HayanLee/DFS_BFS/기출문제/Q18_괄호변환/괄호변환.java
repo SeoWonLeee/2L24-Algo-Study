@@ -8,68 +8,62 @@ class Solution {
         return answer;
     }
 
-    //"올바른 괄호 문자열"인지 확인하는 메서드
-    public static boolean check(String string){
-        int first = 0;
-        if(string.charAt(0) == ')'){
-            return false;
-        }
-        for(int i=0; i<string.length(); i++){
-            if(string.charAt(i) == '('){
-                first++;
+    // "올바른 괄호 문자열"인지 확인하는 메서드
+    public static boolean check(String string) {
+        int count = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == '(') {
+                count++;
             } else {
-                first--;
+                count--;
+                if (count < 0) return false;
             }
         }
-        return true;
+        return count == 0;
     }
 
     // "균형잡힌 괄호 문자열" -> "올바른 괄호 문자열" 변환하는 메서드
-    public static String split(String w){
-        StringBuilder u = new StringBuilder();
-        StringBuilder v = new StringBuilder();
+    public static String split(String w) {
+        if (w.isEmpty()) return "";
 
-        if(w.length() == 0){
-            return "";
-        }
-
-        int first = 0;
-        for(int i=0; i<w.length(); i++){
-            if(w.charAt(i) == '('){
-                first++;
+        int count = 0;
+        int index = 0;
+        for (int i = 0; i < w.length(); i++) {
+            if (w.charAt(i) == '(') {
+                count++;
             } else {
-                first--;
+                count--;
             }
-
-            if(first == 0){
-                u.append(w.substring(0,i+1));
-                v.append(w.substring(i+1,w.length()));
-                if(check(u.toString())){
-                    u.append(split(v.toString()));
-                }else{
-                    StringBuilder str = new StringBuilder();
-                    str.append("(");
-                    str.append(split(v.toString()));
-                    str.append(")");
-                    str.append(reverse(u.toString()));
-                    return str.toString();
-                }
+            if (count == 0) {
+                index = i;
                 break;
             }
         }
-        return u.toString();
-    }
-    //u를 변환하는 메서드
-    public static String reverse(String str){
-        StringBuilder string = new StringBuilder();
 
-        for(int i=1; i<str.length()-1; i++){
-            if(str.charAt(i) == '(') {
-                string.append(")");
-            } else {
-                string.append("(");
-            }
-            return string.toString();
+        String u = w.substring(0, index + 1);
+        String v = w.substring(index + 1);
+
+        if (check(u)) {
+            return u + split(v);
+        } else {
+            StringBuilder sb = new StringBuilder("(");
+            sb.append(split(v));
+            sb.append(")");
+            sb.append(reverse(u.substring(1, u.length() - 1)));
+            return sb.toString();
         }
+    }
+
+    // u를 변환하는 메서드
+    public static String reverse(String str) {
+        StringBuilder reversed = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '(') {
+                reversed.append(')');
+            } else {
+                reversed.append('(');
+            }
+        }
+        return reversed.toString();
     }
 }
