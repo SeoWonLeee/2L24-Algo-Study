@@ -15,10 +15,13 @@ public class 특정거리의도시찾기 {
     static int K;
     static int X;
     static int [][]arr;
+    static boolean[] visited;
 
     static ArrayList<Integer> map = new ArrayList<>();
 
-    public static void main(String[] args){
+    static ArrayList<Integer> result = new ArrayList<>();
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         N = sc.nextInt();
@@ -28,35 +31,60 @@ public class 특정거리의도시찾기 {
 
         sc.nextLine();
 
-        arr = new int[N][M];
-        for(int i=0; i<N; i++){
+        arr = new int[N + 1][M + 1];
+        visited = new boolean[N + 1];
+
+        /*for(int i=0; i<N; i++){
             String map = sc.nextLine();
+            Arrays.fill(arr[i], -1);
             for(int j=0; j<M; j++){
-                arr[i][j] = map.charAt(j) - '0';
+                //arr[i][j] = map.charAt(j) - '0';
+                int a = sc.nextInt();
+                int b = sc.nextInt();
+                arr[a-1][b-1] = 1;
+            }
+        }*/
+
+
+        //도로 정보 입력
+        for (int i = 0; i < M; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            arr[a][b] = 1;
+        }
+        bfs(X);
+
+        if (result.isEmpty()) {
+            System.out.println(-1);
+        } else {
+            Collections.sort(result);
+            for(int i=0; i<result.size(); i++) {
+                System.out.println(result.get(i));
             }
         }
-        System.out.println(bfs(0,0));
     }
 
-    public static int bfs(int x, int y){
-        Queue<int[]> queue = new LinkedList<>();
-        queue.offer(new int[]{x,y});
+    public static void bfs(int x) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(x);
+        visited[x] = true;
 
-        while(!queue.isEmpty()){
-            int[] current = queue.poll();
-            x = current[0];
-            y = current[1];
-            for(int i=0; i<4; i++){
-                if(x < 0 || y < 0 || x >= N || y >= M){
-                    return -1;
+        int depth = 0;
+        while (!queue.isEmpty() && depth <= K) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                int current = queue.poll();
+                if (depth == K) {
+                    result.add(current);
                 }
-
-                if(arr[x][y] == 1){
-                    arr[x][y] = arr[x][y] + 1;
-                    queue.offer(new int[]{x,y});
+                for (int j = 1; j <= N; j++) {
+                    if (arr[current][j] == 1 && !visited[j]) {
+                        queue.offer(j);
+                        visited[j] = true;
+                    }
                 }
             }
+            depth++;
         }
-        return arr[N-1][M-1];
     }
 }
