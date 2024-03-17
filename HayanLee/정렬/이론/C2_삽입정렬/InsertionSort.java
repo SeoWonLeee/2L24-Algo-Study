@@ -1,6 +1,4 @@
-package HayanLee.정렬.이론.삽입정렬;
-
-import java.util.*;
+package HayanLee.정렬.이론.C2_삽입정렬;
 
 public class InsertionSort {
 

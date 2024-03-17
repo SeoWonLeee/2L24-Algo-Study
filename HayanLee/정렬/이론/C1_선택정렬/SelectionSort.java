@@ -1,6 +1,4 @@
-package HayanLee.정렬.이론.선택정렬;
-
-import java.util.*;
+package HayanLee.정렬.이론.C1_선택정렬;
 
 public class SelectionSort {
 
