@@ -1,4 +1,4 @@
-package HayanLee.정렬.이론.C1_선택정렬;
+package HayanLee.정렬.이론.C2_선택정렬;
 
 public class swap {
 
