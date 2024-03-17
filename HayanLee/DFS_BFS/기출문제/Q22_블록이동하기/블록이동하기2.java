@@ -5,7 +5,7 @@ package HayanLee.DFS_BFS.기출문제.Q22_블록이동하기;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Solution {
+class 블록이동하기2 {
 
     static int N;
     static int[][] board;
