@@ -3,6 +3,8 @@
 - 오름차순으로 정렬하고 싶은 배열을 전달인자로 주면, 전달인자로 받은 배열이 정렬된다.
     - 문자열의 경우, 아스키코드 순(알파벳 순)으로 오름차순 정렬되며, 한글도 가나다 순으로 정렬된다.
 
+<br>
+
 #### Sort(Array)
 - java.util.Arrays 클래스에 static 메서드로 선언되어 있다.
   ![image](https://github.com/hayannn/2L24-Algo-Study/assets/102213509/cb80e30d-1c72-4c02-8cbf-3a1ec672976c)
@@ -28,6 +30,7 @@
     }
   }
   ```
+
 <br>
 
 #### Sort(Array, Comparator)

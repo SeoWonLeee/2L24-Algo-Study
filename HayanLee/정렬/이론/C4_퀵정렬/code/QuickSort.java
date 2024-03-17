@@ -1,4 +1,4 @@
-package HayanLee.정렬.이론.C4_퀵정렬;
+package HayanLee.정렬.이론.C4_퀵정렬.code;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package HayanLee.정렬.이론.C6_정렬라이브러리;
+package HayanLee.정렬.이론.C6_정렬라이브러리.code;
 
 import java.util.*;
 

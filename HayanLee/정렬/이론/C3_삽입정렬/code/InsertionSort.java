@@ -1,4 +1,4 @@
-package HayanLee.정렬.이론.C3_삽입정렬;
+package HayanLee.정렬.이론.C3_삽입정렬.code;
 
 public class InsertionSort {
 
