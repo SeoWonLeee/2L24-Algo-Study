@@ -13,7 +13,7 @@ package HayanLee.정렬.실전문제.성적이_낮은_순서로_학생_출력하
 import java.util.*;
 public class ScoreDesc {
 
-    class Students implements Comparable<Students> {
+    static class Students implements Comparable<Students> {
 
         private String name;
         private int score;
@@ -44,10 +44,17 @@ public class ScoreDesc {
 
         int N = sc.nextInt();
 
-        Integer[] arr = new Integer[N];
+        /*Integer[] arr = new Integer[N];
         for(int i=0; i<N; i++){
             arr[i] = sc.nextInt();
             students.add();
+        }*/
+
+        List<Students> students = new ArrayList<>();
+        for (int i = 0; i < N; i++) {
+            String name = sc.next();
+            int score = sc.nextInt();
+            students.add(new Students(name, score));
         }
 
         Collections.sort(students);
