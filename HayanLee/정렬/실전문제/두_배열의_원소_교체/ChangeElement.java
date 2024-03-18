@@ -1,6 +1,7 @@
 package HayanLee.정렬.실전문제.두_배열의_원소_교체;
 
 //오후 7시 19분 ~ 7시 27분
+// 재풀이 : ~7시 42분
 /*
 [알고리즘]
 1. N, K 입력받기
@@ -32,25 +33,25 @@ public class ChangeElement {
             B[i] = sc.nextInt();
         }
 
-        int[] C = new int[N * 2];
+        //int[] C = new int[N];
 
         Arrays.sort(A);
-        Arrays.sort(B);
+        Arrays.sort(B, Collections.reverseOrder());
 
-        for (int i = 0; i < N; i++) {
-            if (A[i] > B[N - i - 1]) {
-                C[i] = A[i];
-                C[N + i] = B[N - i - 1];
+        for (int i = 0; i < K; i++) {
+            if (A[i] < B[i]) {
+                A[i] = B[i];
             } else {
-                C[i] = B[N - i - 1];
-                C[N + i] = A[i];
+                break;
             }
         }
 
         int sum = 0;
-        for(int num : C){
-            sum += num;
+
+        for(int i=0; i<N; i++){
+            sum += A[i];
         }
-        System.out.print(sum + " ");
+
+        System.out.print(sum);
     }
 }
