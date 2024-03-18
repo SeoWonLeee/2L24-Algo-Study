@@ -20,7 +20,7 @@ public class TopToBottom {
         Arrays.sort(arr, Collections.reverseOrder());
 
         for(int i=0; i<N; i++) {
-            System.out.println(arr[i] + " ");
+            System.out.print(arr[i] + " ");
         }
 
 
