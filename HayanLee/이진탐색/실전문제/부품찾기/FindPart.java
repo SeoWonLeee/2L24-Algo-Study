@@ -1,6 +1,7 @@
 package HayanLee.이진탐색.실전문제.부품찾기;
 
-//오후 3시 18분 ~
+//오후 3시 18분 ~3시 45분
+//재풀이 : ~ 4시 7분
 
 /*
 [알고리즘]
@@ -40,26 +41,24 @@ public class FindPart {
             arrTwo[i] = sc.nextInt();
         }
 
-        int result = binarySearch(arrOne, arrTwo[i], 0, N-1);
-
         for(int i=0; i<M; i++) {
+            int result = binarySearch(arrOne, arrTwo[i], 0, N-1);
+
             if (result == -1) {
                 System.out.print("no" + " ");
             } else {
                 System.out.print("yes" + " ");
             }
         }
-
-
     }
 
-    public static class binarySearch (int[] arrOne, int[] arrTwo, int start, int end){
+    public static int binarySearch(int[] arrOne, int target, int start, int end){
         while (start <= end){
             int middle = (start + end) / 2;
-            if(arrOne[middle] == arrTwo[middle]){
+            if(arrOne[middle] == target){
                 return middle;
             }
-            if(arrOne[middle] > arrTwo[middle]){
+            if(arrOne[middle] > target){
                 end = middle - 1;
             } else {
                 start = middle + 1;
