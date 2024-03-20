@@ -1,4 +1,4 @@
-package HayanLee.이진탐색.이론예제코드;
+package HayanLee.이진탐색.이론.이론예제코드;
 
 import java.util.*;
 
