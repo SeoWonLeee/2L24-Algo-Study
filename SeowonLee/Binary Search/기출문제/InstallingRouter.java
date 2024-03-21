@@ -48,7 +48,5 @@ public class InstallingRouter {
 
         int result = maxDistanceBetweenRouters(houses, C);
         System.out.println(result);
-
-        scanner.close();
     }
 }
