@@ -17,7 +17,6 @@ public class WiFiInstall {
     static int C;
     static int[] arr;
 
-    static int gap;
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
@@ -32,24 +31,26 @@ public class WiFiInstall {
         Arrays.sort(arr);
 
         int start = 1;
-        int end = Arrays.stream(arr).max().getAsInt(); // 최대 높이부터 시작
+        int end = Arrays.stream(arr).max().getAsInt();
         int result = binarySearch(arr, C, start, end);
 
         System.out.println(result);
     }
 
-    public static int binarySearch(int[] arr, int gap, int start, int end){
+    public static int binarySearch(int[] arr, int C, int start, int end){
         int result = 0;
 
         while (start <= end){
-            int total = 0;
+            int count = 1;
+            int prev = arr[0];
             int middle = (start + end) / 2;
             for (int i = 0; i < N; i++) {
-                if (arr[i] > middle) {
-                    total += arr[i] - middle;
+                if (arr[i] - prev >= middle) {
+                    count++;
+                    prev += arr[i];
                 }
             }
-            if (total < gap) {
+            if (count < C) {
                 end = middle - 1;
             } else {
                 result = middle;
