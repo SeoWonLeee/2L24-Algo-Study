@@ -32,7 +32,8 @@ public class WiFiInstall {
         Arrays.sort(arr);
 
         int start = 1;
-        int end = Arrays.stream(arr).max().getAsInt();
+        //int end = Arrays.stream(arr).max().getAsInt();
+        int end = arr[N - 1] - arr[0];
         int result = binarySearch(arr, C, start, end);
 
         System.out.println(result);
@@ -44,7 +45,8 @@ public class WiFiInstall {
         while (start <= end){
             int count = 1;
             int prev = arr[0];
-            int middle = (start + end) / 2;
+            //int middle = (start + end) / 2;
+            int middle = start + (end - start) / 2;
             for (int i = 0; i < N; i++) {
                 if (arr[i] - prev >= middle) {
                     count++;
