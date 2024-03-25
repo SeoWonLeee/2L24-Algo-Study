@@ -1,7 +1,7 @@
 package HayanLee.다이나믹프로그래밍.실전문제.효율적인화폐구성;
 
 //오전 9시 37분 ~ 9시 48분
-//재풀이 : ~
+//재풀이 : ~ 오전 10시 12분
 /*
 [알고리즘]
 1. N, M 입력받기
@@ -22,19 +22,23 @@ public class MinimumMoneys {
             arr[i] = sc.nextInt();
         }
 
-        int[] d = new int[10001];
+        int[] d = new int[M+1];
+
+        //이전 배열 저장과 초기화를 위해 작성
+        Arrays.fill(d, 10001);
 
         d[0] = 0;
         for(int i=0; i<N; i++){
-            for(int j=0; j<M; j++) {
-                d[i] = Math.min(d[i], d[i - arr[j]] + 1);
-
-                if (d[i] == 10001) {
-                    System.out.println(-1);
-                }
+            for(int j=arr[i]; j<=M; j++) { //j를 arr[i]를 기준으로 범위 설정하기
+                d[j] = Math.min(d[j], d[j - arr[i]] + 1);
             }
         }
-        System.out.println(d[N]);
-    }
 
+        if (d[M] != 10001) { //결과 M원 출력하기
+            System.out.println(d[M]);
+        }
+        if (d[M] == 10001) { //불가능할 경우 -1 출력하는 조건 추가
+            System.out.println(-1);
+        }
+    }
 }
