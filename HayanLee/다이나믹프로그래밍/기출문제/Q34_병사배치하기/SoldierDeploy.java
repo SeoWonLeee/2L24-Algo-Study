@@ -1,6 +1,7 @@
 package HayanLee.다이나믹프로그래밍.기출문제.Q34_병사배치하기;
 
 //오후 1시 30분 ~ 1시 50분
+//재풀이: ~ 2시 5분
 /*
 [알고리즘]
 1. N 입력받기
@@ -29,7 +30,7 @@ public class SoldierDeploy {
             arr[i] = sc.nextInt();
         }
 
-        Arrays.sort(arr, Collections.reverseOrder());
+        //Arrays.sort(arr, Collections.reverseOrder());
 
         d = new int[N];
         Arrays.fill(d, 1);
