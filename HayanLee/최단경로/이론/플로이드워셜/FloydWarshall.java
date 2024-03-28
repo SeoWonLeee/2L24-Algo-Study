@@ -1,4 +1,4 @@
-package HayanLee.최단경로.이론;
+package HayanLee.최단경로.이론.플로이드워셜;
 
 import java.util.*;
 
