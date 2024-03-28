@@ -9,17 +9,17 @@ package HayanLee.최단경로.실전문제.전보;
  */
 import java.util.*;
 
-class Telegram implements Comparable<Telegram> {
+class Node implements Comparable<Node> {
     int idx;
     int d;
 
-    public Telegram(int idx, int d) {
+    public Node(int idx, int d) {
         this.idx = idx;
         this.d = d;
     }
 
     @Override
-    public int compareTo(Telegram other) {
+    public int compareTo(Node other) {
         return Integer.compare(this.d, other.d);
     }
 }
@@ -37,7 +37,7 @@ public class Telegraphy {
         M = scanner.nextInt();
         C = scanner.nextInt();
 
-        ArrayList<ArrayList<Telegram>> dList = new ArrayList<>();
+        ArrayList<ArrayList<Node>> dList = new ArrayList<>();
         for (int i = 0; i <= N; i++) {
             dList.add(new ArrayList<>());
         }
@@ -47,30 +47,30 @@ public class Telegraphy {
             int x = scanner.nextInt();
             int y = scanner.nextInt();
             int z = scanner.nextInt();
-            dList.get(x).add(new Telegram(y, z));
+            dList.get(x).add(new Node(y, z));
         }
 
         int[] d = new int[N + 1];
         Arrays.fill(d, INF);
 
         // 4. 개선된 다익스트라 알고리즘 구현하기
-        PriorityQueue<Telegram> pq = new PriorityQueue<>();
-        pq.offer(new Telegram(C, 0));
+        PriorityQueue<Node> pq = new PriorityQueue<>();
+        pq.offer(new Node(C, 0));
         d[C] = 0;
 
         while (!pq.isEmpty()) {
-            Telegram T = pq.poll();
+            Node T = pq.poll();
             int now = T.idx;
             int dist = T.d;
 
             if (d[now] < dist) continue;
 
-            for (Telegram nextT : dList.get(now)) {
+            for (Node nextT : dList.get(now)) {
                 int cost = dist + nextT.d;
 
                 if (cost < d[nextT.idx]) {
                     d[nextT.idx] = cost;
-                    pq.offer(new Telegram(nextT.idx, cost));
+                    pq.offer(new Node(nextT.idx, cost));
                 }
             }
         }
