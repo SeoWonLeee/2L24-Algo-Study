@@ -30,6 +30,14 @@ public class FutureCity {
             TD[i][i] = 0;
         }
 
+        //++ 각 간선들의 정보를 받아서, 그 값으로 초기화하기
+        for (int i = 0; i < M; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            TD[a][b] = 1;
+            TD[b][a] = 1;
+        }
+
         X = sc.nextInt();
         K = sc.nextInt();
 
@@ -44,10 +52,10 @@ public class FutureCity {
 
         // 결과 출력
         int path = TD[1][K] + TD[K][X];
-        if (path >= INF) {
-            System.out.println("-1"); // 경로가 없는 경우
-        } else {
+        if (path < INF) {
             System.out.println(path);
+        } else {
+            System.out.println("-1"); // 경로가 없는 경우
         }
     }
 }
