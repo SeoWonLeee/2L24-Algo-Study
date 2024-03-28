@@ -42,6 +42,13 @@ public class Telegraphy {
             dList.add(new ArrayList<>());
         }
 
+        //++ 간선 정보 추가 및 초기화하기
+        for (int i = 0; i < M; i++) {
+            int x = scanner.nextInt();
+            int y = scanner.nextInt();
+            int z = scanner.nextInt();
+            dList.get(x).add(new Telegram(y, z));
+        }
 
         int[] d = new int[N + 1];
         Arrays.fill(d, INF);
