@@ -1,7 +1,8 @@
-package HayanLee.그래프이론.이론.code;
+package HayanLee.그래프이론.이론.코드;
+
 import java.util.*;
 
-public class DisjointSetsOne {
+public class CheckCycle {
 
     // 노드의 개수(V)와 간선(Union 연산)의 개수(E)
     // 노드의 개수는 최대 100,000개라고 가정
@@ -12,7 +13,7 @@ public class DisjointSetsOne {
     public static int findParent(int x) {
         // 루트 노드가 아니라면, 루트 노드를 찾을 때까지 재귀적으로 호출
         if (x == parent[x]) return x;
-        return findParent(parent[x]);
+        return parent[x] = findParent(parent[x]);
     }
 
     // 두 원소가 속한 집합을 합치기
@@ -34,25 +35,27 @@ public class DisjointSetsOne {
             parent[i] = i;
         }
 
-        // Union 연산을 각각 수행
+        boolean cycle = false; // 사이클 발생 여부
+
         for (int i = 0; i < e; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
-            unionParent(a, b);
+            // 사이클이 발생한 경우 종료
+            if (findParent(a) == findParent(b)) {
+                cycle = true;
+                break;
+            }
+            // 사이클이 발생하지 않았다면 합집합(Union) 연산 수행
+            else {
+                unionParent(a, b);
+            }
         }
 
-        // 각 원소가 속한 집합 출력하기
-        System.out.print("각 원소가 속한 집합: ");
-        for (int i = 1; i <= v; i++) {
-            System.out.print(findParent(i) + " ");
+        if (cycle) {
+            System.out.println("사이클이 발생했습니다.");
         }
-        System.out.println();
-
-        // 부모 테이블 내용 출력하기
-        System.out.print("부모 테이블: ");
-        for (int i = 1; i <= v; i++) {
-            System.out.print(parent[i] + " ");
+        else {
+            System.out.println("사이클이 발생하지 않았습니다.");
         }
-        System.out.println();
     }
 }

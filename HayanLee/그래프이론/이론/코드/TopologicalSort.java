@@ -1,4 +1,4 @@
-package HayanLee.그래프이론.이론.code;
+package HayanLee.그래프이론.이론.코드;
 
 import java.util.*;
 
