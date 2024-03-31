@@ -1,8 +1,7 @@
-package HayanLee.그래프이론.이론.code;
-
+package HayanLee.그래프이론.이론.코드;
 import java.util.*;
 
-public class DisjointSetsTwo {
+public class DisjointSetsOne {
 
     // 노드의 개수(V)와 간선(Union 연산)의 개수(E)
     // 노드의 개수는 최대 100,000개라고 가정
@@ -13,7 +12,7 @@ public class DisjointSetsTwo {
     public static int findParent(int x) {
         // 루트 노드가 아니라면, 루트 노드를 찾을 때까지 재귀적으로 호출
         if (x == parent[x]) return x;
-        return parent[x] = findParent(parent[x]);
+        return findParent(parent[x]);
     }
 
     // 두 원소가 속한 집합을 합치기
