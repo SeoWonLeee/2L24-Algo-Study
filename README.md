@@ -29,6 +29,9 @@
   [[한빛미디어] 이것이 취업을 위한 코딩 테스트다 with 파이썬 (나동빈 저) YouTube](https://www.youtube.com/watch?v=m-9pAwq1o3w&list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC)
 
 - 스터디 주차별 계획
+
+> ## 🚨 정렬 기출 문제부터 필수 풀이 문제 지정 ➡️ 그 외 문제는 자율적으로 업로드 🚨
+
   - Part 02 주요 알고리즘 이론과 실전 문제(8개 챕터) + Part 03 알고리즘 유형별 기출문제
   - 주제별 4일씩 분량 설정하여 2일은 Part2로 이론 학습, 2일은 Part3로 실전 문제 풀이(단, 분량에 따라 유동적일 수 있습니다!)
       - ex) Part2의 ch3 그리디 학습 2일 → 그 다음 2일은 Part3 ch11 그리디 문제 풀이
